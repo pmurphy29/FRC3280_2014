@@ -96,7 +96,7 @@ public class SuperStructure {
                 mPWM_Winch.setRaw(Tools.joy2pwm(0));
                 mFiringSolenoid.set(DoubleSolenoid.Value.kForward);
                 mPWM_Winch.setRaw(Tools.joy2pwm(-1.0));
-                Thread.sleep(5000);
+                Thread.sleep(5500);
                 mPWM_Winch.setRaw(Tools.joy2pwm(0));
             } else {
                 mFiringSolenoid.set(DoubleSolenoid.Value.kForward);
