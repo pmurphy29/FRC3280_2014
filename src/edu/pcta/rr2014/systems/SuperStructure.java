@@ -114,4 +114,22 @@ public class SuperStructure {
         mPWM_Roller.setRaw(Tools.joy2pwm(0));
         mPWM_Winch.setRaw(Tools.joy2pwm(0));
     }
+        public void fire(){
+                System.out.println("Firing.");
+                mLoadingSolenoid.set(DoubleSolenoid.Value.kReverse);
+                try{
+                    Thread.sleep(200);
+                }
+                catch(InterruptedException ex){
+                    System.out.println("auto interrupted");
+                }
+                mFiringSolenoid.set(DoubleSolenoid.Value.kReverse);
+                try{Thread.sleep(200);
+                }
+                catch(InterruptedException ex){
+                    
+                }
+                isArmed = false;
+                reload(true);
+    }
 }
